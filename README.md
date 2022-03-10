@@ -1,34 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next Foundation
 
-## Getting Started
+## References
+[default create-next-app README.md](./create-next-app-readme.md)
 
-First, run the development server:
+## Environment Setup
+1. Install node
+2. Create next project - `$ npx create-next-app <project-name>`
 
-```bash
-npm run dev
-# or
-yarn dev
+## Demo page
+- local - `$ yarn dev`
+
+## Introduction
+Next.js simplifies the process of building a react application for production
+- [File based routing](#file-based-routing)
+- [Pre-rendering](#pre-rendering)
+- API routes
+- Support for CSS modules
+- Authentication
+- Dev and Prod build system
+
+## Project Structure
+[readme - Next.js project structure](./notes/project-structure.md)
+
+## File Based Routing
+[readme - file based routing](./notes/file-based-routing.md)
+- pages routing
+- get router parameters
+- navigate with UI & programming
+- custom 404 page
+```sh
+# pages folder
+pages
+├── _app.tsx
+├── nested
+│   ├── index.tsx               # http://localhost:3000/nested/
+│   └── [nestedId]
+│       ├── index.tsx           # http://localhost:3000/nested/:nestedId/
+│       └── deeper   
+│           └── [deeperId].tsx  # http://localhost:3000/nested/:nestedId/deeper/:deeperId
+├── catch-all-routes
+│   └── [...params].tsx         # http://localhost:3000/catch-all-routes/*
+├── optional-catch-all-routes
+│   └── [[...params]].tsx       # http://localhost:3000/oprional-catch-all-routes/*
+└── index.tsx                   # http://localhost:3000/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Pre-rendering
+[readme - pre-rendering](./notes/pre-rendering.md)

@@ -11,6 +11,12 @@ a {
   text-decoration: none;
 }
 
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+
 * {
   box-sizing: border-box;
 }
