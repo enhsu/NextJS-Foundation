@@ -40,3 +40,23 @@ pre-rendering is dont by default in a Next app
 [readme - SSG](./pre-rendering-SSG.md)
 
 ## Server-side Rendering
+
+[readme - SSR](./pre-rendering-SSR.md)
+
+## Client-side fetching data
+
+Time to use client-side feching data
+
+> example: User dashboard page, it's private and behind a login screen, highly user-specific and SEO is not relevant
+
+### fetching data references
+
+- [SWR - React Hooks for Data Fetching](https://github.com/vercel/swr)
+
+## Pre-rendering + Client-side data fetching
+
+scenario: some list + category filter
+
+- [implement - pre-rendering + client-side fetch](./../pages/pre-rendering/pre-rendering-plus-client-side-fetch/index.tsx)
+- [reference - Next.js shallow routing](https://nextjs.org/docs/routing/shallow-routing)
+  - shallow routing - routing without calling `getStaticProps/getServerSideProps`

@@ -1,11 +1,13 @@
 import PreRenderingLayout from "../../layouts/pre-rendering";
 
 function PreRendering() {
-    return (
-        <div>Index</div>
-    );
+  return (
+    <div>
+      <h1>pre-rendering index page</h1>
+    </div>
+  );
 }
 
-PreRendering.Layout = PreRenderingLayout
+PreRendering.Layout = PreRenderingLayout;
 
 export default PreRendering;
