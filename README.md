@@ -20,7 +20,7 @@ Next.js simplifies the process of building a react application for production
 - [File based routing](#file-based-routing)
 - [Pre-rendering](#pre-rendering)
 - [API routes](#api-routes)
-- Support for CSS modules
+- [Support for CSS modules](#styling-section)
 - Authentication
 - Dev and Prod build system
 
@@ -65,3 +65,7 @@ pages
 ## API routes
 
 [readme - API routes](./notes/API-routes.md)
+
+## Styling Section
+
+[readme - Styling](./notes/Styling.md)
