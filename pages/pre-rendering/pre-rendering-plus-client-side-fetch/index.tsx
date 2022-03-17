@@ -1,7 +1,8 @@
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import PreRenderingLayout from "../../../layouts/pre-rendering";
+import RootLayout from "../../../layouts/RootLayout";
 
 type TodoType = {
   userId: number;
@@ -51,7 +52,13 @@ const PreRenderingAndClientSide = ({ todoList }: { todoList: TodoType[] }) => {
   );
 };
 
-PreRenderingAndClientSide.Layout = PreRenderingLayout;
+PreRenderingAndClientSide.getLayout = function (page: ReactElement) {
+  return (
+    <RootLayout>
+      <PreRenderingLayout>{page}</PreRenderingLayout>
+    </RootLayout>
+  );
+};
 
 export default PreRenderingAndClientSide;
 

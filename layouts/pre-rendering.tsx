@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { LayoutPropsType } from "../types/App.type";
+import { ReactPropsWithChildren } from "../types/App.type";
 
-function PreRenderingLayout({ children }: LayoutPropsType) {
+function PreRenderingLayout({ children }: ReactPropsWithChildren) {
   return (
     <div>
       <h1>Pre-Rendering</h1>

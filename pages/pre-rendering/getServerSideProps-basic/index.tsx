@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { ReactElement } from "react";
 import PreRenderingLayout from "../../../layouts/pre-rendering";
+import RootLayout from "../../../layouts/RootLayout";
 
 function GetServerSidePropsBasic() {
   return (
@@ -17,6 +19,12 @@ function GetServerSidePropsBasic() {
   );
 }
 
-GetServerSidePropsBasic.Layout = PreRenderingLayout;
+GetServerSidePropsBasic.getLayout = function (page: ReactElement) {
+  return (
+    <RootLayout>
+      <PreRenderingLayout>{page}</PreRenderingLayout>
+    </RootLayout>
+  );
+};
 
 export default GetServerSidePropsBasic;

@@ -1,4 +1,6 @@
+import { ReactElement } from "react";
 import APIRoutesLayout from "../../layouts/api-routes";
+import RootLayout from "../../layouts/RootLayout";
 
 function APIRoutes() {
   return (
@@ -8,6 +10,12 @@ function APIRoutes() {
   );
 }
 
-APIRoutes.Layout = APIRoutesLayout;
+APIRoutes.getLayout = function (page: ReactElement) {
+  return (
+    <RootLayout>
+      <APIRoutesLayout>{page}</APIRoutesLayout>
+    </RootLayout>
+  );
+};
 
 export default APIRoutes;

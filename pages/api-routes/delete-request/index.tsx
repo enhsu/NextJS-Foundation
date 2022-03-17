@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
+import APIRoutesLayout from "../../../layouts/api-routes";
+import RootLayout from "../../../layouts/RootLayout";
 import { CommentType } from "../../../types/Comment.type";
 
 function DeleteRequest() {
@@ -37,5 +39,13 @@ function DeleteRequest() {
     </ul>
   );
 }
+
+DeleteRequest.getLayout = function (page: ReactElement) {
+  return (
+    <RootLayout>
+      <APIRoutesLayout>{page}</APIRoutesLayout>
+    </RootLayout>
+  );
+};
 
 export default DeleteRequest;

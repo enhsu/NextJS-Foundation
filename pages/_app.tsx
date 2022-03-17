@@ -1,35 +1,25 @@
-import Link from "next/link";
+import { SessionProvider } from "next-auth/react";
 import "../styles/globals.css";
-// import type { AppProps } from 'next/app'
-import type { AppPropsType, LayoutPropsType } from "../types/App.type";
+import type { AppPropsWithLayout } from "./../types/App.type";
 
-const EmptyLayout = ({ children }: LayoutPropsType) => <>{children}</>;
+// function Auth({ children }: ReactPropsWithChildren): ReactElement {
+//   const { data: session, status } = useSession({ required: true });
+//   const isUser = !!session?.user;
 
-// function MyApp({ Component, pageProps }: AppProps) {
-function MyApp({ Component, pageProps }: AppPropsType) {
-  const Layout = Component.Layout || EmptyLayout;
+//   if (isUser) {
+//     return <>children</>;
+//   }
+
+//   return <div>Loading...</div>;
+// }
+
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout || ((page) => page);
 
   return (
-    <>
-      <h1>Demo Navigation</h1>
-      <nav>
-        <Link href="/">
-          <a>Next.js Home</a>
-        </Link>
-        <Link href="/file-based-routing">
-          <a>File Based Routing</a>
-        </Link>
-        <Link href="/pre-rendering">
-          <a>Pre-rendering</a>
-        </Link>
-        <Link href="/api-routes">
-          <a>API routes</a>
-        </Link>
-      </nav>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </>
+    <SessionProvider session={pageProps.session}>
+      {getLayout(<Component {...pageProps} />)}
+    </SessionProvider>
   );
 }
 

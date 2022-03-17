@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { LayoutPropsType } from "../types/App.type";
+import { ReactPropsWithChildren } from "../types/App.type";
 
-function APIRoutesLayout({ children }: LayoutPropsType) {
+function APIRoutesLayout({ children }: ReactPropsWithChildren) {
   return (
     <div>
       <h1>API Routes</h1>

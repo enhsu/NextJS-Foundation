@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import APIRoutesLayout from "../../../layouts/api-routes";
+import RootLayout from "../../../layouts/RootLayout";
 import { CommentType } from "../../../types/Comment.type";
 
 function PostRequest() {
@@ -53,6 +54,12 @@ function PostRequest() {
   );
 }
 
-PostRequest.Layout = APIRoutesLayout;
+PostRequest.getLayout = function (page: ReactElement) {
+  return (
+    <RootLayout>
+      <APIRoutesLayout>{page}</APIRoutesLayout>
+    </RootLayout>
+  );
+};
 
 export default PostRequest;

@@ -1,6 +1,8 @@
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
+import { ReactElement } from "react";
 import PreRenderingLayout from "../../../layouts/pre-rendering";
+import RootLayout from "../../../layouts/RootLayout";
 
 type TodoType = {
   userId: number;
@@ -35,7 +37,13 @@ function TodoCompleted({ todos, state }: TodoCompletedPropsType) {
   );
 }
 
-TodoCompleted.Layout = PreRenderingLayout;
+TodoCompleted.getLayout = function (page: ReactElement) {
+  return (
+    <RootLayout>
+      <PreRenderingLayout>{page}</PreRenderingLayout>
+    </RootLayout>
+  );
+};
 
 export default TodoCompleted;
 

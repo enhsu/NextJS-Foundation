@@ -1,4 +1,6 @@
+import { ReactElement } from "react";
 import PreRenderingLayout from "../../layouts/pre-rendering";
+import RootLayout from "../../layouts/RootLayout";
 
 function PreRendering() {
   return (
@@ -8,6 +10,12 @@ function PreRendering() {
   );
 }
 
-PreRendering.Layout = PreRenderingLayout;
+PreRendering.getLayout = function (page: ReactElement) {
+  return (
+    <RootLayout>
+      <PreRenderingLayout>{page}</PreRenderingLayout>
+    </RootLayout>
+  );
+};
 
 export default PreRendering;

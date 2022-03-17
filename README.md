@@ -22,8 +22,8 @@ Next.js simplifies the process of building a react application for production
 - [API routes](#api-routes)
 - [Support for CSS modules](#styling-section)
 - [Miscellaneous Section](#miscellaneous-section)
-- Authentication
-- Dev and Prod build system
+- [Authentication](#authentication)
+- [reference - deploy to Vercel](https://youtu.be/KmxAH7ng8Qw)
 
 ## references
 
@@ -74,3 +74,7 @@ pages
 ## Miscellaneous Section
 
 [readme - Miscellaneous Section](./notes/miscellaneous-section.md)
+
+## Authentication
+
+- [readme - Authentication](./notes/authentication.md)
